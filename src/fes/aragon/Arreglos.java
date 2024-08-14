@@ -22,7 +22,8 @@ public class Arreglos {
         metodos.localizar(arreglo,70);
         metodos.recuperar(arreglo,8);
         metodos.suprimir(arreglo,2);
-        metodos.siguiente(arreglo,9);
+        metodos.anterior(arreglo,2);
+
 
     }
 }

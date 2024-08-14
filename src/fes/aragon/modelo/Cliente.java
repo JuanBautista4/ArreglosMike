@@ -42,9 +42,9 @@ public class Cliente {
         return pos;
     }
 
-    public boolean validarPosicion(int[] a,int pos) {
+    public boolean validarPosicion(int[] a) {
         boolean posicion = false;
-        if (pos < a.length) {
+        if (posi < a.length) {
             posicion = true;
         }
         return posicion;
@@ -52,7 +52,7 @@ public class Cliente {
 
     public int recuperar(int[] a, int p) {
         int val = 0;
-        if (validarPosicion(a,p)) {
+        if (validarPosicion(a)) {
             System.out.println("recuperar funciona");
             for (int i = 0; i < a.length; i++) {
                 if (p == i) {
@@ -67,7 +67,7 @@ public class Cliente {
 
     public void suprimir(int[] a, int p) {
         System.out.println(a[p] + "<----antes de restablecer");
-        if (validarPosicion(a,p)) {
+        if (validarPosicion(a)) {
             for (int i = 0; i < a.length; i++) {
                 if (i == p) {
                     a[i] = 0;
@@ -76,13 +76,24 @@ public class Cliente {
             }
         }
     }
-    public int siguiente(int[]a, int p){
+    public int anterior(int[] a, int p) {
         int val = 0;
-        if (validarPosicion(a,p+1)) {
-            System.out.println("siguiente funciona");
-            val=a[p+1];
+        if (p > 0 && p < a.length) {
+            if (validarPosicion(a)) {
+                System.out.println("anterior funciona");
+                for (int i = 0; i < a.length; i++) {
+                    if (p == i) {
+                        val = a[p - 1];
+
+                    }
+                }
+            }
         }
-        System.out.println(val + "<---- Siguiente");
-        return val;
+        else{
+            System.out.println("no hay valor anterior");
+        }
+            System.out.println(val + "<---- valor anterior");
+            return val;
+        }
     }
-}
+
