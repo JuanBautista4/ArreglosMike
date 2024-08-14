@@ -76,4 +76,24 @@ public class Cliente {
             }
         }
     }
-}
+    public int anterior(int[] a, int p) {
+        int val = 0;
+        if (p > 0 && p < a.length) {
+            if (validarPosicion(a)) {
+                System.out.println("anterior funciona");
+                for (int i = 0; i < a.length; i++) {
+                    if (p == i) {
+                        val = a[p - 1];
+
+                    }
+                }
+            }
+        }
+        else{
+            System.out.println("no hay valor anterior");
+        }
+            System.out.println(val + "<---- valor anterior");
+            return val;
+        }
+    }
+
