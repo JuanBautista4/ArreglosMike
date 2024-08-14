@@ -8,6 +8,5 @@ public class Arreglos {
         int[] arreglo=new int[10];
         insertar insertar = new insertar(20,arreglo);
 
-
     }
 }
