@@ -1,10 +1,15 @@
 package fes.aragon.modelo;
 
-public class insertar {
-    private int indice;
+public class Cliente {
+    public int indice;
     private int posi;
 
-    public insertar(int valor, int[] a) {
+
+public void cliente(){
+
+}
+
+    public void insertar(int valor, int[] a) {
         if(!validarLongitud(a)){
             a[indice]=valor;
             indice++;
@@ -18,7 +23,6 @@ public class insertar {
             limite=true;
         }
         return limite;
-//juan puto
     }
 
     public int localizar(int[]a, int x){
