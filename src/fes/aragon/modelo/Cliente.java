@@ -10,8 +10,10 @@ public void cliente(){
 }
 
     public void insertar(int valor, int[] a) {
+        System.out.println("insertar funciona");
         if(!validarLongitud(a)){
             a[indice]=valor;
+            System.out.println(valor+"<---- valor agregado");
             indice++;
         }
     }
@@ -19,6 +21,7 @@ public void cliente(){
 
     private boolean validarLongitud(int[]a){
         boolean limite=false;
+        System.out.println("validar funciona");
         if(indice==a.length){
             limite=true;
         }
@@ -27,9 +30,11 @@ public void cliente(){
 
     public int localizar(int[]a, int x){
         int pos=0;
+        System.out.println("localizar funciona");
         for(int i=0; i<a.length;i++){
             if(a[i]==x){
                 pos=i;
+                System.out.println(pos+ "<---- posicion");
             }
             else{
                 pos=(-1);

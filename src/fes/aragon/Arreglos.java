@@ -9,6 +9,8 @@ public class Arreglos {
         int[] arreglo=new int[10];
         Cliente metodos = new Cliente();
         metodos.insertar(20,arreglo);
-
+        metodos.insertar(10,arreglo);
+metodos.localizar(arreglo,20);
+metodos.recuperar(arreglo,0);
     }
 }
