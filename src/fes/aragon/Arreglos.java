@@ -10,7 +10,17 @@ public class Arreglos {
         Cliente metodos = new Cliente();
         metodos.insertar(20,arreglo);
         metodos.insertar(10,arreglo);
-metodos.localizar(arreglo,20);
-metodos.recuperar(arreglo,0);
+        metodos.insertar(40,arreglo);
+        metodos.insertar(60,arreglo);
+        metodos.insertar(30,arreglo);
+        metodos.insertar(50,arreglo);
+        metodos.insertar(90,arreglo);
+        metodos.insertar(70,arreglo);
+        metodos.insertar(100,arreglo);
+        metodos.insertar(80,arreglo);
+        metodos.localizar(arreglo,100);
+        metodos.localizar(arreglo,70);
+
+
     }
 }
