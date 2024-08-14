@@ -64,4 +64,13 @@ public void cliente(){
         System.out.println(val+ "<---- Recuperado");
         return val;
     }
+    public void suprimir(int[]a,int p){
+        System.out.println(a[p]+"<----antes de restablecer");
+        for (int i = 0; i < a.length; i++) {
+                if(i==p){
+                    a[i]=0;
+                    System.out.println(a[i]+"<----Se restablece a 0");
+                }
+        }
+    }
 }
