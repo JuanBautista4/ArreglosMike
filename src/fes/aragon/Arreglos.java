@@ -20,6 +20,7 @@ public class Arreglos {
         metodos.insertar(80,arreglo);
         metodos.localizar(arreglo,100);
         metodos.localizar(arreglo,70);
+        metodos.recuperar(arreglo,8);
 
 
     }

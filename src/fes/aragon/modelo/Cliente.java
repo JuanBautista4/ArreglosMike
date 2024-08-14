@@ -53,12 +53,15 @@ public void cliente(){
     public int recuperar(int[]a, int p){
         int val = 0;
         if(validarPosicion(a)) {
+            System.out.println("recuperar funciona");
             for(int i=0; i<a.length;i++){
                 if(p==i){
-                    return val;
+                    val=a[p];
+
                 }
             }
         }
+        System.out.println(val+ "<---- Recuperado");
         return val;
     }
 }
