@@ -1,5 +1,5 @@
 package fes.aragon.estatico;
-
+import fes.aragon.excep.IndiceFueraDeRango;
 
 
 /*
@@ -25,7 +25,7 @@ public class Arreglo<E> {
             l[indice] = x;
             indice++;
         } else {
-            //throw new IndiceFueraDeRango("Indice fuera de rango");
+            throw new IndiceFueraDeRango("Indice fuera de rango");
         }
     }
 
@@ -54,7 +54,7 @@ Método que recupera un valor de tipo E del arreglo mediante el indice, retorna 
  */
     public E recupera(int x)/*throws IndiceFueraDeRango */ {
         if (x < l.length || x < 0) {
-            //throw new IndiceFueraDeRango("Indice fuera de rango");
+            throw new IndiceFueraDeRango("Indice fuera de rango");
         } else {
             final E e = (E) l[x];
             return e;
@@ -68,12 +68,35 @@ Método que elimina un valor de tipo E del arreglo mediante el indice indicado
 @param x indica el indice del elemento a eliminar
 @trows IndiceFueraDeRango exepción que se activa cuando el indice x esta fuera de los rangos del arreglo
  */
-    public void suprime(int x)/*throws IndiceFueraDeRango*/ {
+    public void suprime(int x) throws IndiceFueraDeRango{
         if (x > l.length || x < 0) {
-            //throw new IndiceFueraDeRango("indice fuera de rango");
+            throw new IndiceFueraDeRango("indice fuera de rango");
         } else {
             l[x] = null;
         }
+    }
+
+    /*
+    Metodo que recupera el valor E siguiente al indice indicado
+
+    @param x indica el valor del indice
+    @return se retorna el valor E correspondiente a la una posicion siguiente del indice indicado
+    @trows IndiceFueraDeRango exepción que se activa cuando el indice x esta fuera de los rangos del arreglo
+     */
+    public E siguiente(int x){
+        if (x > l.length || x <= 0) {
+            throw new IndiceFueraDeRango("indice fuera de rango");
+        }
+        else
+        {
+            for (int i = 0; i < l.length; i++) {
+                if (x == i) {
+                    final E e = (E) l[x + 1];
+                    return e;
+                }
+            }
+        }
+        return null;
     }
 
     /*
@@ -85,7 +108,7 @@ Método que elimina un valor de tipo E del arreglo mediante el indice indicado
      */
     public E anterior(int x) {
         if (x > l.length || x <= 0) {
-            //throw new IndiceFueraDeRango("indice fuera de rango");
+            throw new IndiceFueraDeRango("indice fuera de rango");
         }
         else
         {
