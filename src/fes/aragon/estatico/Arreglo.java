@@ -85,7 +85,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
     @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo
      */
     public E siguiente(int x)throws IndiceFueraDeRango{
-        if (x > l.length || x <= 0) {
+        if (x >= l.length || x < 0) {
             throw new IndiceFueraDeRango("indice fuera de rango");
         }
         else
