@@ -1,10 +1,12 @@
 package fes.aragon;
 
+import fes.aragon.estatico.Arreglo;
+import fes.aragon.excep.IndiceFueraDeRango;
 import fes.aragon.modelo.Cliente;
 
 
 public class Arreglos {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IndiceFueraDeRango {
         System.out.println("hola");
         int[] arreglo=new int[10];
         Cliente metodos = new Cliente();
@@ -24,7 +26,18 @@ public class Arreglos {
         metodos.suprimir(arreglo,2);
         metodos.siguiente(arreglo,8);
         metodos.anterior(arreglo,2);
-
+        Arreglo<Integer> generico=new Arreglo<>(5);
+        generico.insertar(19);
+        generico.insertar(15);
+        generico.insertar(13);
+        generico.insertar(12);
+        generico.insertar(11);
+        System.out.println(generico.recupera(3));
+        System.out.println(generico.localiza(15));
+        System.out.println(generico.anterior(3));
+        System.out.println(generico.siguiente(3));
+        generico.suprime(3);
+        System.out.println(generico.recupera(3));
 
     }
 }

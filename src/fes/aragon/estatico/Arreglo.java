@@ -54,9 +54,10 @@ Método que recupera un valor de tipo E del arreglo mediante el índice, retorna
 @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo
  */
     public E recupera(int x) throws IndiceFueraDeRango{
-        if (x < l.length || x < 0) {
+        if (x > l.length || x < 0) {
             throw new IndiceFueraDeRango("Indice fuera de rango");
         } else {
+            @SuppressWarnings("unchecked")
             final E e = (E) l[x];
             return e;
         }
@@ -91,6 +92,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
         {
             for (int i = 0; i < l.length; i++) {
                 if (x == i) {
+                    @SuppressWarnings("unchecked")
                     final E e = (E) l[x + 1];
                     return e;
                 }
@@ -114,6 +116,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
         {
             for (int i = 0; i < l.length; i++) {
                 if (x == i) {
+                    @SuppressWarnings("unchecked")
                     final E e = (E) l[x - 1];
                     return e;
                 }
