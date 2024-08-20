@@ -38,6 +38,6 @@ public class Arreglos {
         System.out.println(generico.siguiente(3));
         generico.suprime(3);
         System.out.println(generico.recupera(3));
-
+        //por si acaso
     }
 }
