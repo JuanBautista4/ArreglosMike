@@ -138,7 +138,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
         return e;
     }
     public void imprime(){
-        for (int i = 0; i <= indice ; i++) {
+        for (int i = 0; i < indice ; i++) {
             System.out.println(l[i]);
         }
     }
