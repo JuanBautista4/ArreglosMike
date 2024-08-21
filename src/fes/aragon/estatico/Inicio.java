@@ -35,7 +35,7 @@ import java.io.IOException;
                 System.out.println("Error al introducir datos");
             }
             generico.limpiar();
-            generico.recupera(0);
+            generico.recupera(2);
         }
     }
 
