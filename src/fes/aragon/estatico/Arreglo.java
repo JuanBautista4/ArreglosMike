@@ -151,6 +151,16 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
             l[x]=a;
         }
     }
+    public void intercambiar(int i, int j) {
+        if (i >= 0 && i < indice && j >= 0 && j < indice) {
+            E temp = (E) l[i];
+            l[i] = l[j];
+            l[j] = temp;
+        }
+    }
+    public int tam(){
+        return indice;
+    }
 
 
 }
