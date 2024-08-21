@@ -37,12 +37,13 @@ Método que localiza un valor de tipo E del arreglo y retorna el índice
 @return se retorna -1 si el valor no se encuentra en la lista, en caso contrario se retorna el indice
  */
     public Integer localiza(E x) {
-        for (int i = 0; i < l.length; i++) {
+        for (int i = 0; i<=indice; i++) {
             if (l[i].equals(x)) {
                 return i;
             }
         }
         return -1;
+
     }
 
 
@@ -54,7 +55,7 @@ Método que recupera un valor de tipo E del arreglo mediante el índice, retorna
 @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo
  */
     public E recupera(int x) throws IndiceFueraDeRango{
-        if (x > l.length || x < 0) {
+        if (x>indice||x > l.length || x < 0) {
             throw new IndiceFueraDeRango("Indice fuera de rango");
         } else {
             @SuppressWarnings("unchecked")
@@ -70,7 +71,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
 @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo
  */
     public void suprime(int x) throws IndiceFueraDeRango{
-        if (x > l.length || x < 0) {
+        if (x>l.length||x > indice || x < 0) {
             throw new IndiceFueraDeRango("indice fuera de rango");
         } else {
             l[x] = null;
@@ -85,7 +86,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
     @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo
      */
     public E siguiente(int x)throws IndiceFueraDeRango{
-        if (x >= l.length || x < 0) {
+        if (x>indice||x >= l.length || x < 0) {
             throw new IndiceFueraDeRango("indice fuera de rango");
         }
         else
@@ -109,7 +110,7 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
     @trows IndiceFueraDeRango exepción que se activa cuando el índice x está fuera de los rangos del arreglo o se quiere recuperar el valor anterior de la posicion 0 del arreglo
      */
     public E anterior(int x)throws IndiceFueraDeRango {
-        if (x > l.length || x <= 0) {
+        if (x>indice||x > l.length || x <= 0) {
             throw new IndiceFueraDeRango("indice fuera de rango");
         }
         else
@@ -124,6 +125,33 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
         }
         return null;
     }
+    //para el metodo limpiar, reiniciar el indice a 0 y asignarle al indice 0 eel valor nulo
+    public void limpiar(){
+        indice=0;
+        l[indice]=null;
+        System.out.println("--------");
+        System.out.println(" "+l[indice]);
+    }
+    public E primero(){
+        @SuppressWarnings("unchecked")
+        final E e = (E) l[0];
+        return e;
+    }
+    public void imprime(){
+        for (int i = 0; i <= indice ; i++) {
+            System.out.println(l[i]);
+        }
+    }
+    public void asignar(int x, E a) throws IndiceFueraDeRango {
+        if (x<indice||x > l.length || x <= 0) {
+            throw new IndiceFueraDeRango("indice fuera de rango");
+        }
+        else
+        {
+            l[x]=a;
+        }
+    }
+
 
 }
 
