@@ -11,7 +11,8 @@ public class Lectura {
         String archivoCSV = "/home/marvd/Descargas/floats_two_decimals.csv";
         String linea = "";
         String separador = ",";
-        Arreglo<Double> generico=new Arreglo<>(300);
+        Arreglo<Double> generico=new Arreglo<>(301);
+        Double sumatoria=0.0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
             while ((linea = br.readLine()) != null) {
@@ -21,8 +22,11 @@ public class Lectura {
                 for (String valor : datos) {
                     Double dato = Double.parseDouble(valor);
                     generico.insertar(dato);
+                    sumatoria=sumatoria+dato;
            }
                 generico.imprime();
+                Double promedio=sumatoria/300;
+                System.out.println("promedio"+promedio);
 
 
             }
