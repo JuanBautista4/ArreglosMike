@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 
 public class Lectura {
     public static void main(String[] args){
-        String archivoCSV = "/home/juanpi/Descargas/floats_two_decimals.csv";
+        String archivoCSV = "recursos/floats_two_decimals.csv";
         String linea = "";
         String separador = ",";
         Arreglo<Double> generico=new Arreglo<>(300);
@@ -33,7 +33,7 @@ public class Lectura {
                 Double min=burbujaMinimo(generico);
                 System.out.println("Val Min:"+min);
                 Double max=burbujaMaximo(generico);
-                System.out.println("Val Max"+max);
+                System.out.println("Val Max: "+max);
 
             }
         } catch (IOException e) {

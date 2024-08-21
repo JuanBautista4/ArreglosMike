@@ -161,8 +161,6 @@ Método que elimina un valor de tipo E del arreglo mediante el índice indicado
     public int tam(){
         return indice;
     }
-
-
 }
 
 
