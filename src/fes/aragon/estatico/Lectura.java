@@ -28,6 +28,7 @@ public class Lectura {
 
            }
                 generico.imprime();
+                System.out.println("Suma de todos los elementos: "+sumatoria);
                 Double promedio=sumatoria/300;
                 System.out.println("promedio: "+promedio);
                 Double min=burbujaMinimo(generico);
