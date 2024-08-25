@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 
 public class Lectura {
     public static void main(String[] args){
-        String archivoCSV = "recursos/floats_two_decimals.csv";
+        String archivoCSV = "recursos/Datos.csv";
         String linea = "";
         String separador = ",";
         Arreglo<Double> generico=new Arreglo<>(300);
