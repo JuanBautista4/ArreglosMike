@@ -31,6 +31,19 @@ public class ListaSimple<E> {
             System.out.println(tmp.getDato());
         }
     }
+    public void imprimirNodo(int nod){
+        Nodo<E> actual=cabeza;
+        int contador=0;
+        while(actual!=null){
+            if(contador==nod){
+                System.out.println("El nodo de posision "+nod+" tiene el dato: "+actual.getDato());
+            return;
+            }
+            contador++;
+            actual=actual.getSiguiente();
+        }
+        System.out.println("Indice fuera de rango");
+    }
 
     public int getLongitud() {
         return longitud;
