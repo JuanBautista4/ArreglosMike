@@ -19,7 +19,6 @@ public class ClienteNodo {
 
         try (BufferedReader br = new BufferedReader(new FileReader(AarchivoCSV))) {
             while ((linea = br.readLine()) != null) {
-                // Usar el separador para dividir las columnas
                 String[] datos = linea.split(separador);
 
                 for (String valor : datos) {
