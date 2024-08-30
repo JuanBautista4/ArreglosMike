@@ -143,5 +143,6 @@ public class ListaSimple<E> {
 
         System.out.println("Índice fuera de rango");
     }
+    //QUEDO HASTA EL PROBLEMA 7
 
 }
