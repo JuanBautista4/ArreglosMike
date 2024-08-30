@@ -45,6 +45,9 @@ public class ClienteNodo {
         ListaCabeza.imprimirNodo(299);
         ListaCabeza.esVacia();
         ListaCabeza.getLongitud();
-
+        System.out.println("---------------Eliminado en cabeza-----");
+        ListaCabeza.eliminarEnCabeza();
+        ListaCabeza.imprimirElementos();
+        System.out.println("---------------Eliminado en cola-------");
     }
 }

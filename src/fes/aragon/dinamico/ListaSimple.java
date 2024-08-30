@@ -70,14 +70,34 @@ public class ListaSimple<E> {
             System.out.println("tiene datos");
         }
     }
-   /* public void eliminarEnCabeza(){
+    public void eliminarEnCabeza(){
         Nodo<E> temp;
         if(cabeza!=null){
             temp=cabeza.getSiguiente();
             cabeza=temp;
         }
     }
-    */
+    /*public void eliminarEnCola(){
+        Nodo<E> temp;
+        if(cabeza!=null && cola!=null){
+            if (cabeza == cola) {
+                // Solo hay un elemento en la lista
+                cabeza = null;
+                cola = null;
+                return;
+            }
 
+            // Encontrar el penúltimo nodo
+            Nodo<E> actual = cabeza;
+            while (actual.getSiguiente() != cola) {
+                actual = actual.getSiguiente();
+            }
+
+            // Eliminar el último nodo
+            actual.setSiguiente(null);
+            cola = actual;
+        }
+    }
+    */
 
 }
