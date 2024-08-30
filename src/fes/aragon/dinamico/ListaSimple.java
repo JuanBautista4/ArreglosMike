@@ -108,6 +108,7 @@ public class ListaSimple<E> {
                 break; // Salir del bucle al encontrar el dato
             }
         }
+        System.out.println("indice eliminado: "+indic);
         return indic;
     }
 
