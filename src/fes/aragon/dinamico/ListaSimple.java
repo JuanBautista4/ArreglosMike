@@ -111,5 +111,37 @@ public class ListaSimple<E> {
         System.out.println("indice eliminado: "+indic);
         return indic;
     }
+    public void eliminarEnIndice(int nod) {
+        if (cabeza == null) {
+            System.out.println("La lista está vacía");
+            return;
+        }
+        Nodo<E> actual = cabeza;
+        Nodo<E> anterior = null;
+        int contador = 0;
+
+        while (actual != null) {
+            if (contador == nod) {
+                if (anterior == null) {
+                    // El nodo a eliminar es la cabeza
+                    cabeza = actual.getSiguiente();
+                } else {
+                    // El nodo a eliminar está en medio o al final
+                    anterior.setSiguiente(actual.getSiguiente());
+                    if (actual.getSiguiente() == null) {
+                        // Si estamos eliminando el último nodo, actualizar la referencia de la cola si la tienes
+                        cola = anterior;
+                    }
+                }
+                System.out.println("Nodo en la posición " + nod + " eliminado");
+                return;
+            }
+            anterior = actual;
+            actual = actual.getSiguiente();
+            contador++;
+        }
+
+        System.out.println("Índice fuera de rango");
+    }
 
 }

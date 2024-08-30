@@ -52,5 +52,8 @@ public class ClienteNodo {
         ListaCabeza.eliminarEnCola();
         ListaCabeza.imprimirElementos();
         ListaCabeza.estaEnLista(141.0);
+        System.out.println("---------------------------------------------");
+        ListaCabeza.eliminarEnIndice(2);
+        ListaCabeza.imprimirElementos();
     }
 }
