@@ -43,6 +43,8 @@ public class ClienteNodo {
         System.out.println("------------------------------");
         ListaCola.imprimirElementos();
         ListaCabeza.imprimirNodo(299);
+        ListaCabeza.esVacia();
+        ListaCabeza.getLongitud();
 
     }
 }

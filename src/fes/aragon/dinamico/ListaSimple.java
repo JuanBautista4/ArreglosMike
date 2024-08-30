@@ -46,6 +46,7 @@ public class ListaSimple<E> {
     }
 
     public int getLongitud() {
+        System.out.println(""+longitud);
         return longitud;
     }
     public boolean eliminarConUnElemento(E x){
@@ -65,6 +66,8 @@ public class ListaSimple<E> {
     public void esVacia(){
         if(cabeza==null && cola==null){
             System.out.println("Nodo Vacio");
+        }else {
+            System.out.println("tiene datos");
         }
     }
    /* public void eliminarEnCabeza(){
