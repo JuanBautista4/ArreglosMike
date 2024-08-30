@@ -48,4 +48,32 @@ public class ListaSimple<E> {
     public int getLongitud() {
         return longitud;
     }
+    public boolean eliminarConUnElemento(E x){
+        boolean elim=false;
+        if(cabeza!=null){
+            if(cabeza==cola && cabeza.getDato()==x){
+                cabeza=null;
+                cola=null;
+                elim=true;
+                longitud--;
+            }else{
+                elim=false;
+            }
+        }
+        return elim;
+    }
+    public void esVacia(){
+        if(cabeza==null && cola==null){
+            System.out.println("Nodo Vacio");
+        }
+    }
+   /* public void eliminarEnCabeza(){
+        Nodo<E> temp;
+        if(cabeza!=null){
+            temp=cabeza.getSiguiente();
+            cabeza=temp;
+        }
+    }
+    */
+
 }
