@@ -77,7 +77,7 @@ public class ListaSimple<E> {
             cabeza=temp;
         }
     }
-    /*public void eliminarEnCola(){
+    public void eliminarEnCola(){
         Nodo<E> temp;
         if(cabeza!=null && cola!=null){
             if (cabeza == cola) {
@@ -98,6 +98,17 @@ public class ListaSimple<E> {
             cola = actual;
         }
     }
-    */
+    public int estaEnLista(E dato) {
+        int indic = -1;
+        int lon = 0;
+        for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+            lon++;
+            if (tmp.getDato().equals(dato)) {
+                indic = lon;
+                break; // Salir del bucle al encontrar el dato
+            }
+        }
+        return indic;
+    }
 
 }

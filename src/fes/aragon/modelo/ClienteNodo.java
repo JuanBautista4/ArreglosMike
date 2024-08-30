@@ -49,5 +49,7 @@ public class ClienteNodo {
         ListaCabeza.eliminarEnCabeza();
         ListaCabeza.imprimirElementos();
         System.out.println("---------------Eliminado en cola-------");
+        ListaCabeza.eliminarEnCola();
+        ListaCabeza.imprimirElementos();
     }
 }
