@@ -1,5 +1,7 @@
 package fes.aragon.dinamico;
 
+import com.sun.source.tree.NewArrayTree;
+
 public class ListaSimple<E> {
     protected Nodo<E> cabeza, cola;
     protected int longitud=0;
@@ -45,7 +47,7 @@ public class ListaSimple<E> {
         System.out.println("Indice fuera de rango");
     }
 
-    public int getLongitud() {
+    public int getLongitud() {//
         System.out.println(""+longitud);
         return longitud;
     }
@@ -63,21 +65,22 @@ public class ListaSimple<E> {
         }
         return elim;
     }
-    public void esVacia(){
+    public void esVacia(){//
         if(cabeza==null && cola==null){
             System.out.println("Nodo Vacio");
         }else {
             System.out.println("tiene datos");
         }
     }
-    public void eliminarEnCabeza(){
+    public void eliminarEnCabeza(){//
         Nodo<E> temp;
         if(cabeza!=null){
             temp=cabeza.getSiguiente();
             cabeza=temp;
         }
+        longitud--;
     }
-    public void eliminarEnCola(){
+    public void eliminarEnCola(){//
         Nodo<E> temp;
         if(cabeza!=null && cola!=null){
             if (cabeza == cola) {
@@ -97,8 +100,9 @@ public class ListaSimple<E> {
             actual.setSiguiente(null);
             cola = actual;
         }
+        longitud--;
     }
-    public int estaEnLista(E dato) {
+    public int estaEnLista(E dato) {//
         int indic = -1;
         int lon = 0;
         for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
@@ -111,7 +115,7 @@ public class ListaSimple<E> {
         System.out.println("indice eliminado: "+indic);
         return indic;
     }
-    public void eliminarEnIndice(int nod) {
+    public void eliminarEnIndice(int nod) {//
         if (cabeza == null) {
             System.out.println("La lista está vacía");
             return;
@@ -142,6 +146,53 @@ public class ListaSimple<E> {
         }
 
         System.out.println("Índice fuera de rango");
+    }
+    /*public void agregarEnCola(E dato){
+        if(cabeza==null){
+            cabeza=cola=new Nodo<E>(dato);
+        }
+        else{
+            cola.setSiguiente(new Nodo<E>(dato));
+            cola=cola.getSiguiente();
+        }
+        longitud++;
+    }
+    public void imprimirElementos(){
+        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
+            System.out.println(tmp.getDato());
+        }
+    }*/
+    public void insertarEnIndice(E dat,int indice){
+        int lon=0;
+        Nodo<E> actual = cabeza;
+        E ultimo=cola.getDato();
+
+        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
+           actual = tmp;
+            lon++;
+        if(lon==indice){
+            actual.setDato(dat);
+            for(Nodo<E> tmp2=actual;tmp2 !=null;tmp2=tmp.getSiguiente()) {
+            actual=actual.getSiguiente();
+            }
+        }
+            cola.setSiguiente(new Nodo<E>(ultimo));
+            cola=cola.getSiguiente();
+        }
+    }
+
+    public void asignar(E dat,int indice){
+        int lon=0;
+        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
+            Nodo<E> actual = tmp;
+            lon++;
+            if(lon==indice){
+                actual.setDato(dat);
+            }
+            else{
+                System.out.println("indicefueraderango");
+            }
+        }
     }
     //QUEDO HASTA EL PROBLEMA 7
 

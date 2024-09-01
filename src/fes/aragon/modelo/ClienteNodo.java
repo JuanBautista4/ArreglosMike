@@ -1,5 +1,5 @@
 package fes.aragon.modelo;
-
+/*1,2,3,4,5,6*/
 import fes.aragon.dinamico.ListaSimple;
 import fes.aragon.dinamico.Nodo;
 import fes.aragon.estatico.Arreglo;
