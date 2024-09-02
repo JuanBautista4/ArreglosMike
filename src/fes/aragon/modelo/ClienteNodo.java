@@ -54,7 +54,7 @@ public class ClienteNodo {
         ListaCabeza.imprimirElementos();
         ListaCabeza.estaEnLista(90.12);
         System.out.println("---------------------------------------------");
-        //ListaCabeza.eliminarEnIndice(2);
+        ListaCabeza.eliminarEnIndice(2);
         ListaCabeza.imprimirElementos();
         ListaCabeza.getLongitud();
         System.out.println("------METODO 8------------------------------------");
@@ -65,5 +65,10 @@ public class ClienteNodo {
         ListaCabeza.asignar(20.,2);
         ListaCabeza.imprimirElementos();
         ListaCabeza.getLongitud();
+        System.out.println("------METODO 10------------------------------------");
+        ListaCabeza.asignar10(20.,32.54,false);
+        ListaCabeza.imprimirElementos();
+        ListaCabeza.getLongitud();
+        System.out.println("------Fin------------------------------------");
     }
 }

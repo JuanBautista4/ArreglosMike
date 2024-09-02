@@ -116,30 +116,36 @@ public class ListaSimple<E> {
         System.out.println("indice eliminado: "+indic);
         return indic;
     }
-    public void eliminarEnIndice(int nod) {//
+    public void eliminarEnIndice(int nod) {
         if (cabeza == null) {
             System.out.println("La lista está vacía");
             return;
         }
+
+        if (nod < 0 || nod >= longitud) {
+            System.out.println("Índice fuera de rango");
+            return;
+        }
+
         Nodo<E> actual = cabeza;
         Nodo<E> anterior = null;
         int contador = 0;
 
+        // Recorremos la lista hasta encontrar el nodo a eliminar
         while (actual != null) {
             if (contador == nod) {
                 if (anterior == null) {
                     // El nodo a eliminar es la cabeza
                     cabeza = actual.getSiguiente();
-                    longitud--;
                 } else {
-                    // El nodo a eliminar está en medio o al final
+                    // El nodo a eliminar está en el medio o al final
                     anterior.setSiguiente(actual.getSiguiente());
-                    longitud--;
                     if (actual.getSiguiente() == null) {
-                        // Si estamos eliminando el último nodo, actualizar la referencia de la cola si la tienes
+                        // Si estamos eliminando el último nodo, actualizar la referencia de la cola
                         cola = anterior;
                     }
                 }
+                longitud--;  // Reducir la longitud de la lista
                 System.out.println("Nodo en la posición " + nod + " eliminado");
                 return;
             }
@@ -147,23 +153,9 @@ public class ListaSimple<E> {
             actual = actual.getSiguiente();
             contador++;
         }
-        System.out.println("Índice fuera de rango");
     }
-    /*public void agregarEnCola(E dato){
-        if(cabeza==null){
-            cabeza=cola=new Nodo<E>(dato);
-        }
-        else{
-            cola.setSiguiente(new Nodo<E>(dato));
-            cola=cola.getSiguiente();
-        }
-        longitud++;
-    }
-    public void imprimirElementos(){
-        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
-            System.out.println(tmp.getDato());
-        }
-    }*/
+
+
     public void insertarEnIndice(E dat, int indice) {
         if (indice < 0 || indice > longitud) {
             throw new IndexOutOfBoundsException("Índice fuera de los límites");
@@ -210,6 +202,26 @@ public class ListaSimple<E> {
             }
             actual = actual.getSiguiente();
             lon++;
+        }
+    }
+    public void asignar10(E dato, E nuevoDato, boolean cambiarTodos) {
+        Nodo<E> actual = cabeza;
+        boolean encontrado = false;
+
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                actual.setDato(nuevoDato);
+                encontrado = true;
+
+                if (!cambiarTodos) {
+                    return;
+                }
+            }
+            actual = actual.getSiguiente();
+        }
+
+        if (!encontrado) {
+            System.out.println("El dato no se encontró en la lista.");
         }
     }
 
