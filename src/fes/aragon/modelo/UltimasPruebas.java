@@ -1,0 +1,54 @@
+package fes.aragon.modelo;
+
+import fes.aragon.dinamico.ListaSimple;
+
+public class UltimasPruebas {
+    public static void main(String[] args) {
+        ListaSimple<Integer> ListaSimple = new ListaSimple<>();
+        ListaSimple.agregarEnCola(0);
+        ListaSimple.agregarEnCola(1);
+        ListaSimple.agregarEnCola(2);
+        ListaSimple.agregarEnCola(3);
+        ListaSimple.agregarEnCola(4);
+        ListaSimple.agregarEnCola(5);
+
+ListaSimple.imprimirElementos();
+
+        System.out.println("-----------Primer ejercicio-----------");
+        for (int i = 0; i < ListaSimple.getLongitud(); i++) {
+            if (i % 2 == 0) {
+                ListaSimple.imprimirNodo(i);
+            }
+        }
+        System.out.println("-----------Segundo ejercicio-----------");
+        for (int i = 0; i < ListaSimple.getLongitud(); i++) {
+            if (i % 2 != 0) {
+                System.out.println((ListaSimple.obtenerNodo(i))*2);
+            }
+        }
+        System.out.println("-----------Segundo ejercicio-----------");
+        for (int i = 0; i < ListaSimple.getLongitud(); i++) {
+            if (i % 2 == 0) {
+                ListaSimple.asignar10(ListaSimple.obtenerNodo(i),100,false);
+            }
+        }
+        ListaSimple.imprimirElementos();
+
+        System.out.println("-----------Tercer ejercicio-----------");
+        for (int i = 0; i < ListaSimple.getLongitud(); i++) {
+            if (i % 2 != 0) {
+                ListaSimple.asignar10(ListaSimple.obtenerNodo(i),50,false);
+            }
+        }
+        ListaSimple.imprimirElementos();
+
+        System.out.println("-----------Cuarto ejercicio-----------");
+        for (int i = 0; i < ListaSimple.getLongitud(); i++) {
+                if(ListaSimple.obtenerNodo(i)==100){
+                    ListaSimple.eliminarEnIndice(i);
+            }
+        }
+        ListaSimple.imprimirElementos();
+        System.out.println( ListaSimple.getLongitud());
+    }
+}

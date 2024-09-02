@@ -46,9 +46,22 @@ public class ListaSimple<E> {
         }
         System.out.println("Indice fuera de rango");
     }
+    public E obtenerNodo(int nod){
+        Nodo<E> actual=cabeza;
+        int contador=0;
+        while(actual!=null){
+            if(contador==nod){
+                //System.out.println("El nodo de posision "+nod+" tiene el dato: "+actual.getDato());
+                return actual.getDato();
+            }
+            contador++;
+            actual=actual.getSiguiente();
+        }
+        System.out.println("Indice fuera de rango");
+        return null;
+    }
 
-    public int getLongitud() {//
-        System.out.println(""+longitud);
+    public int getLongitud() {
         return longitud;
     }
     public boolean eliminarConUnElemento(E x){
