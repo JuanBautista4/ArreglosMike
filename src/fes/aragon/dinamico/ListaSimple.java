@@ -109,7 +109,8 @@ public class ListaSimple<E> {
             lon++;
             if (tmp.getDato().equals(dato)) {
                 indic = lon;
-                break; // Salir del bucle al encontrar el dato
+                System.out.println("elemento encontrado en el indice: "+indic);
+                return indic;
             }
         }
         System.out.println("indice eliminado: "+indic);
@@ -129,9 +130,11 @@ public class ListaSimple<E> {
                 if (anterior == null) {
                     // El nodo a eliminar es la cabeza
                     cabeza = actual.getSiguiente();
+                    longitud--;
                 } else {
                     // El nodo a eliminar está en medio o al final
                     anterior.setSiguiente(actual.getSiguiente());
+                    longitud--;
                     if (actual.getSiguiente() == null) {
                         // Si estamos eliminando el último nodo, actualizar la referencia de la cola si la tienes
                         cola = anterior;
@@ -144,7 +147,6 @@ public class ListaSimple<E> {
             actual = actual.getSiguiente();
             contador++;
         }
-
         System.out.println("Índice fuera de rango");
     }
     /*public void agregarEnCola(E dato){
@@ -162,38 +164,54 @@ public class ListaSimple<E> {
             System.out.println(tmp.getDato());
         }
     }*/
-    public void insertarEnIndice(E dat,int indice){
-        int lon=0;
+    public void insertarEnIndice(E dat, int indice) {
+        if (indice < 0 || indice > longitud) {
+            throw new IndexOutOfBoundsException("Índice fuera de los límites");
+        }
+
+        Nodo<E> nuevoNodo = new Nodo<>(dat);
+
+        if (indice == 0) {
+            nuevoNodo.setSiguiente(cabeza);
+            cabeza = nuevoNodo;
+            if (longitud == 0) {
+                cola = nuevoNodo; // este es solo si la lista es vacia
+            }
+        } else {
+            Nodo<E> actual = cabeza;
+            for (int i = 0; i < indice - 1; i++) {
+                actual = actual.getSiguiente();
+            }
+
+            nuevoNodo.setSiguiente(actual.getSiguiente());
+            actual.setSiguiente(nuevoNodo);
+
+            if (indice == longitud) {
+                cola = nuevoNodo;
+            }
+        }
+
+        longitud++;
+    }
+
+    public void asignar(E dat, int indice) {
+        if (indice < 0 || indice >= longitud) {
+            System.out.println("Índice fuera de rango");
+            return;
+        }
+
         Nodo<E> actual = cabeza;
-        E ultimo=cola.getDato();
+        int lon = 0;
 
-        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
-           actual = tmp;
-            lon++;
-        if(lon==indice){
-            actual.setDato(dat);
-            for(Nodo<E> tmp2=actual;tmp2 !=null;tmp2=tmp.getSiguiente()) {
-            actual=actual.getSiguiente();
-            }
-        }
-            cola.setSiguiente(new Nodo<E>(ultimo));
-            cola=cola.getSiguiente();
-        }
-    }
-
-    public void asignar(E dat,int indice){
-        int lon=0;
-        for(Nodo<E> tmp=cabeza;tmp !=null;tmp=tmp.getSiguiente()){
-            Nodo<E> actual = tmp;
-            lon++;
-            if(lon==indice){
+        while (actual != null) {
+            if (lon == indice) {
                 actual.setDato(dat);
+                return;
             }
-            else{
-                System.out.println("indicefueraderango");
-            }
+            actual = actual.getSiguiente();
+            lon++;
         }
     }
-    //QUEDO HASTA EL PROBLEMA 7
+
 
 }

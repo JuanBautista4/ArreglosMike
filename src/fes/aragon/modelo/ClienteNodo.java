@@ -8,10 +8,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 public class ClienteNodo {
     public static void main(String[] args) {
-        String AarchivoCSV = "recursos/Datos.csv";
+        String AarchivoCSV = "recursos/datos_dobles_horizontal.csv";
         String linea = "";
         String separador = ",";
         ListaSimple<Double> ListaCabeza = new ListaSimple<>();
@@ -42,7 +43,7 @@ public class ClienteNodo {
         System.out.println("Numero de elementos:"+ListaCola.getLongitud());
         System.out.println("------------------------------");
         ListaCola.imprimirElementos();
-        ListaCabeza.imprimirNodo(299);
+        ListaCabeza.imprimirNodo(2);
         ListaCabeza.esVacia();
         ListaCabeza.getLongitud();
         System.out.println("---------------Eliminado en cabeza-----");
@@ -51,9 +52,18 @@ public class ClienteNodo {
         System.out.println("---------------Eliminado en cola-------");
         ListaCabeza.eliminarEnCola();
         ListaCabeza.imprimirElementos();
-        ListaCabeza.estaEnLista(141.0);
+        ListaCabeza.estaEnLista(90.12);
         System.out.println("---------------------------------------------");
-        ListaCabeza.eliminarEnIndice(2);
+        //ListaCabeza.eliminarEnIndice(2);
         ListaCabeza.imprimirElementos();
+        ListaCabeza.getLongitud();
+        System.out.println("------METODO 8------------------------------------");
+        ListaCabeza.insertarEnIndice(20.1,2);
+        ListaCabeza.imprimirElementos();
+        ListaCabeza.getLongitud();
+        System.out.println("------METODO 9------------------------------------");
+        ListaCabeza.asignar(20.,2);
+        ListaCabeza.imprimirElementos();
+        ListaCabeza.getLongitud();
     }
 }
