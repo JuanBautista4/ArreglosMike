@@ -228,8 +228,8 @@ public class ListaDoble<E> {
         }
     }
 
-
-
-
+    public NodoDoble<E> getCabeza() {
+        return cabeza;
+    }
 }
 
