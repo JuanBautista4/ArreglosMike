@@ -1,9 +1,10 @@
 package fes.aragon.modelo;
 
 import fes.aragon.dinamico.ListaSimple;
+import fes.aragon.excep.IndiceFueraDeRango;
 
 public class UltimasPruebas {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IndiceFueraDeRango {
         ListaSimple<Integer> ListaSimple = new ListaSimple<>();
         ListaSimple.agregarEnCola(0);
         ListaSimple.agregarEnCola(1);

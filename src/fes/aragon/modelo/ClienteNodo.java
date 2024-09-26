@@ -1,17 +1,15 @@
 package fes.aragon.modelo;
-/*1,2,3,4,5,6*/
+
 import fes.aragon.dinamico.ListaSimple;
-import fes.aragon.dinamico.Nodo;
-import fes.aragon.estatico.Arreglo;
+import fes.aragon.excep.IndiceFueraDeRango;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 
 public class ClienteNodo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IndiceFueraDeRango {
         String AarchivoCSV = "recursos/datos_dobles_horizontal.csv";
         String linea = "";
         String separador = ",";
