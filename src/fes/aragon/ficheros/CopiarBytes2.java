@@ -17,7 +17,7 @@ public class CopiarBytes2 {
         //objeto para el flujo de salida
         FileOutputStream out = null;
         try {
-            String nombreArchivo = "/home/juanpi/Escritorio/prueba1.pdf";
+            String nombreArchivo = "recursos/prueba1.pdf";
             //Ubicación del archivo
             in = new FileInputStream(nombreArchivo);
             //Se crea un arreglo de bytes, con el tamaño del archivo a copiar
@@ -26,7 +26,7 @@ public class CopiarBytes2 {
             //Salida del Archivo
             for (int i = 0; i < 10; i++) {
                 //Cambio de nombre a los archivos
-                String archivoSalida = nombreArchivo.replaceFirst("/home/juanpi/Escritorio/prueba1.pdf",
+                String archivoSalida = nombreArchivo.replaceFirst("recursos/prueba1.pdf",
 
                         "Prueba" + i + ".pdf");
 

@@ -17,7 +17,7 @@ public class CopiarBytes3 {
         //clase para el flujo de salida
         FileOutputStream out = null;
         try {
-            String nombreArchivo = "/home/juanpi/Escritorio/prueba1.pdf";
+            String nombreArchivo = "recursos/prueba1.pdf";
             //Ubicación del archivo
             in = new FileInputStream(nombreArchivo);
             int numeroArchivos=5;
@@ -29,7 +29,7 @@ public class CopiarBytes3 {
             while (contador < datos.length) {
                 String archivoSalida =
 
-                        nombreArchivo.replaceFirst("/home/juanpi/Escritorio/prueba1.pdf", "Prueba"
+                        nombreArchivo.replaceFirst("recursos/prueba1.pdf", "Prueba"
 
                                 + indiceArchivo + ".pdf");
                 out = new FileOutputStream(archivoSalida);
@@ -40,9 +40,9 @@ public class CopiarBytes3 {
                     numeroBytes=datos.length-contador;
                 }
             }
-            out = new FileOutputStream("/home/juanpi/Escritorio/prueba.pdf");
+            out = new FileOutputStream("recursos/prueba1.pdf");
             for (int i = 1; i <=numeroArchivos ; i++) {
-                String archivoEntrada = nombreArchivo.replaceFirst("/home/juanpi/Escritorio/prueba.pdf", "Prueba"
+                String archivoEntrada = nombreArchivo.replaceFirst("recursos/prueba1.pdf", "Prueba"
                                 + i + ".pdf");
                 in = new FileInputStream(archivoEntrada);
                 System.out.println("Archivo: " + i + " " + in.available());

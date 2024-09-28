@@ -18,9 +18,9 @@ public class CopiarBytes {
         FileOutputStream out = null;
         try {
             //Ubicación del archivo
-            in = new FileInputStream("/home/juanpi/Escritorio/prueba1.pdf");
+            in = new FileInputStream("recursos/prueba1.pdf");
             //Salida del Archivo
-            out = new FileOutputStream("/home/juanpi/Escritorio/Prueba.pdf");
+            out = new FileOutputStream("recursos/prueba1.pdf");
             int c;
             //lectura del flujo de bytes hasta que nos proporcionen -1
             while ((c = in.read()) != -1) {
