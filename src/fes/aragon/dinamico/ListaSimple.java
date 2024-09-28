@@ -88,26 +88,11 @@ Método que busca un nodo en la lista a partir del índice dado, si el índice s
         }
         throw new IndiceFueraDeRango("indice fuera de rango");
     }
-    /*
-   *******************************pendiente****************************
-    */
+   
     public int getLongitud() {
         return longitud;
     }
-    public boolean eliminarConUnElemento(E x){
-        boolean elim=false;
-        if(cabeza!=null){
-            if(cabeza==cola && cabeza.getDato()==x){
-                cabeza=null;
-                cola=null;
-                elim=true;
-                longitud--;
-            }else{
-                elim=false;
-            }
-        }
-        return elim;
-    }
+
     /*
 Método que evalua si la lista simple es vacia o en su defecto contiene datos
 */

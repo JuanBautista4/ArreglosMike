@@ -1,4 +1,4 @@
-package fes.aragon.modelo;
+package fes.aragon.pruebas;
 /*
 Clase que tiene funciones para utilizar arreglos de tipo E
 @author Bautista Solis Juan Pedro, Calderon Almanza Marvin Daniel, González Amezquita Héctor Rogelio
@@ -8,7 +8,7 @@ Villanueva Ricard
 import fes.aragon.dinamico.ListaSimple;
 import fes.aragon.excep.IndiceFueraDeRango;
 
-public class UltimasPruebas {
+public class ListaSimpleTest2 {
     public static void main(String[] args) throws IndiceFueraDeRango {
         ListaSimple<Integer> ListaSimple = new ListaSimple<>();
         ListaSimple.agregarEnCola(0);

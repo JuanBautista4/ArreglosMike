@@ -1,4 +1,4 @@
-package fes.aragon.modelo;
+package fes.aragon.metodosDeOrdenamiento;
 import fes.aragon.dinamico.ListaDoble;
 import fes.aragon.dinamico.Nodo;
 import fes.aragon.dinamico.NodoDoble;
