@@ -1,6 +1,11 @@
 package fes.aragon.dinamico;
 import fes.aragon.excep.IndiceFueraDeRango;
+/*
+Clase que tiene funciones para utilizar arreglos de tipo E
+@author Bautista Solis Juan Pedro, Calderon Almanza Marvin Daniel, González Amezquita Héctor Rogelio
+Villanueva Ricard
 
+ */
 public class ListaSimple<E> {
     protected Nodo<E> cabeza, cola;
     protected int longitud=0;
