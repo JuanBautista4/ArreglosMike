@@ -256,6 +256,7 @@ Método que elimina el nodo correspondiente al índice indicado
     @param cambiarTodos es un parametro boolean que controla si se desea sustituir la primera coincidencia en dat o en si defecto todos los datos iguales a dat en la lista
     @trows IndiceFueraDeRango exepción que se activa cuando dat no esta en la lista doble
     */
+
     public void asignar10(E dat, E nuevoDato, boolean cambiarTodos) throws IndiceFueraDeRango {
         NodoDoble<E> actual = cabeza;
         boolean encontrado = false;
