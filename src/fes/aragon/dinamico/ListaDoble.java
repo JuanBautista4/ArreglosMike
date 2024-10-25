@@ -282,5 +282,9 @@ Método que elimina el nodo correspondiente al índice indicado
     public NodoDoble<E> getCabeza() {
         return cabeza;
     }
+
+    public int getLongitud() {
+        return longitud;
+    }
 }
 
