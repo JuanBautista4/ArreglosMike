@@ -91,12 +91,13 @@ Método que busca un nodo doble en la lista doble a partir del índice dado, si 
     /*
 Método que comprueba si la lista doble es vacia o en su defecto contiene datos
 */
-    public void esVacia() {
+    public int esVacia() {
         if (cabeza == null && cola == null) {
-            System.out.println("La lista está vacía");
+            return 1;
         } else {
             System.out.println("La lista tiene datos");
         }
+        return 0;
     }
     /*
  Método que elimina el nodo doble que se encuentre en la cabeza

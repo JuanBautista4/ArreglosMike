@@ -149,11 +149,9 @@ Método que busca un dato en la lista a partir del mismo
             lon++;
             if (tmp.getDato().equals(dato)) {
                 indic = lon;
-                System.out.println("elemento encontrado en el indice: "+indic);
                 return indic;
             }
         }
-        System.out.println("indice eliminado: "+indic);
         return indic;
     }
     /*
@@ -164,7 +162,6 @@ Método que elimina el nodo correspondiente al índice indicado
 */
     public void eliminarEnIndice(int ind) throws IndiceFueraDeRango {
         if (cabeza == null) {
-            System.out.println("La lista está vacía");
             return;
         }
 
@@ -190,7 +187,6 @@ Método que elimina el nodo correspondiente al índice indicado
                     }
                 }
                 longitud--;
-                System.out.println("Nodo en la posición " + ind + " eliminado");
                 return;
             }
             anterior = actual;

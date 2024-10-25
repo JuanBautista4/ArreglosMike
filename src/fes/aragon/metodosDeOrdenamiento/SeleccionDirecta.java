@@ -48,7 +48,7 @@ public class SeleccionDirecta {
                 }
                 siguiente = siguiente.getSiguiente();
             }
-            // Intercambiar los valores
+
             if (Amenor != actual) {
                 Integer temp = actual.getDato();
                 actual.setDato(Amenor.getDato());
